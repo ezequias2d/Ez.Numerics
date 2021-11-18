@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ez.Numerics", "src\Ez.Numerics\Ez.Numerics.csproj", "{22FD0E25-857E-4716-8F37-1F56A88C4635}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{468C453C-A50F-4993-9330-B415BBFC87FC}"
+	ProjectSection(SolutionItems) = preProject
+		src\build\common.props.csproj = src\build\common.props.csproj
+		src\build\ez-gear2x.png = src\build\ez-gear2x.png
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ez.Numerics.Tests", "src\Ez.Numerics.Tests\Ez.Numerics.Tests.csproj", "{80EFD258-7F17-49CE-A30D-21E3FBB490E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22FD0E25-857E-4716-8F37-1F56A88C4635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22FD0E25-857E-4716-8F37-1F56A88C4635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22FD0E25-857E-4716-8F37-1F56A88C4635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22FD0E25-857E-4716-8F37-1F56A88C4635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80EFD258-7F17-49CE-A30D-21E3FBB490E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80EFD258-7F17-49CE-A30D-21E3FBB490E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80EFD258-7F17-49CE-A30D-21E3FBB490E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80EFD258-7F17-49CE-A30D-21E3FBB490E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA81DDC8-39D2-4A44-A9CF-52ECBC020F7F}
+	EndGlobalSection
+EndGlobal
