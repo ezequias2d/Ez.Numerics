@@ -25,23 +25,15 @@ namespace Ez.Numerics.Bounding
         /// <summary>
         /// Creates a new <see cref="BoundingBox"/> with the minimum point and maximum point.
         /// </summary>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
+        /// <param name="min">The minimum point.</param>
+        /// <param name="max">The maximum point.</param>
         public BoundingBox(Vector3 min, Vector3 max)
         {
             Min = min;
             Max = max;
         }
-
-        /// <summary>
-        /// Returns the <see cref="ContainmentType"/> between this and another <see cref="IBoundingVolume"/>.
-        /// </summary>
-        /// <param name="bounding">The other <see cref="IBoundingVolume"/> to compare.</param>
-        /// <returns>
-        /// <see cref="ContainmentType.Disjoint"/>, if there is no overlap between the bounding volumes.<br/>
-        /// <see cref="ContainmentType.Contains"/>, if the instance fully contains the volume of <see cref="IBoundingVolume"/>.<br/>
-        /// <see cref="ContainmentType.Intersects"/>, if only part of the instance contains at least part of
-        /// <paramref name="bounding"/> volume.</returns>
+        
+        /// <inheritdoc/>
         public ContainmentType Contains(IBoundingVolume bounding)
         {
             if (bounding is BoundingBox boundingBox)
@@ -72,17 +64,14 @@ namespace Ez.Numerics.Bounding
             return ContainmentType.Disjoint;
         }
 
-        /// <summary>
-        /// Returns a value indicating whether the point is within the bounding.
-        /// </summary>
-        /// <param name="point">The pointer to evaluate.</param>
-        /// <returns><see langword="true"/> if the point is inside the bounding box; otherwise, <see langword="false"/>.</returns>
-        public bool Contains(Vector3 point)
+        /// <inheritdoc/>
+        public ContainmentType Contains(Vector3 point)
         {
             return ((Max.X >= point.X) && (Min.X <= point.X) &&
                 (Max.Y >= point.Y) && (Min.Y <= point.Y) &&
-                (Max.Z >= point.Z) && (Min.Z <= point.Z));
+                (Max.Z >= point.Z) && (Min.Z <= point.Z)) 
+                ? ContainmentType.Contains 
+                : ContainmentType.Disjoint;
         }
-
     }
 }

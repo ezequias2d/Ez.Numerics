@@ -3,6 +3,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
+using System.Numerics;
+
 namespace Ez.Numerics.Bounding
 {
     /// <summary>
@@ -19,6 +21,14 @@ namespace Ez.Numerics.Bounding
         /// <see cref="ContainmentType.Contains"/>, if the instance fully contains the volume of <see cref="IBoundingVolume"/>.<br/>
         /// <see cref="ContainmentType.Intersects"/>, if only part of the instance contains at least part of
         /// <paramref name="bounding"/> volume.</returns>
-        ContainmentType Contains(IBoundingVolume bounding);
+        public ContainmentType Contains(IBoundingVolume bounding);
+
+        /// <summary>
+        /// Returns a value indicating whether the point is within the bounding.
+        /// </summary>
+        /// <param name="point">The pointer to evaluate.</param>
+        /// <returns><see langword="true"/> if the point is inside the bounding box; otherwise, <see langword="false"/>.</returns>
+        public ContainmentType Contains(Vector3 point);
+
     }
 }
