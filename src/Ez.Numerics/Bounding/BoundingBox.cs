@@ -64,6 +64,35 @@ namespace Ez.Numerics.Bounding
             return ContainmentType.Disjoint;
         }
 
+        /// <summary>
+        /// Returns the <see cref="ContainmentType"/> between this and a <see cref="BoundingSphere"/>.
+        /// </summary>
+        /// <param name="sphere">The other <see cref="BoundingSphere"/> to compare.</param>
+        /// <returns>
+        /// <see cref="ContainmentType.Disjoint"/>, if there is no overlap between the bounding volumes.<br/>
+        /// <see cref="ContainmentType.Contains"/>, if the instance fully contains the volume of <see cref="BoundingSphere"/>.<br/>
+        /// <see cref="ContainmentType.Intersects"/>, if only part of the instance contains at least part of
+        /// <paramref name="sphere"/> volume.</returns>
+        public ContainmentType Contains(in BoundingSphere sphere)
+        {
+            var bmin = Min;
+            var bmax = Max;
+            var center = sphere.Center;
+            var radius = sphere.Radius;
+
+            if (center.X - bmin.X > radius
+                && center.Y - bmin.Y > radius
+                && center.Z - bmin.Z > radius
+                && bmax.X - center.X > radius
+                && bmax.Y - center.Y > radius
+                && bmax.Z - center.Z > radius)
+                return ContainmentType.Contains;
+
+            return InternalBounding.Intersects(this, sphere)
+                ? ContainmentType.Intersects
+                : ContainmentType.Disjoint;
+        }
+
         /// <inheritdoc/>
         public ContainmentType Contains(Vector3 point)
         {
