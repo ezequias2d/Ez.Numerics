@@ -10,10 +10,10 @@
 		<PackageOutputPath>..\build\nupkgs</PackageOutputPath>
 		<PackageIcon>ez-gear2x.png</PackageIcon>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>Ez Ez.Numerics Perlin Noise Point Size Bounding Box</PackageTags>
+		<PackageTags>Ez Ez.Numerics Perlin Noise Point Size Bounding Box Sphere</PackageTags>
 		<NeutralLanguage>en</NeutralLanguage>
 		<RepositoryUrl>https://github.com/ezequias2d/Ez.Numerics</RepositoryUrl>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
 		<IncludeSymbols>true</IncludeSymbols>

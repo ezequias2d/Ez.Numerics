@@ -2,6 +2,22 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+	  <Description>
+		  Provides numerics types like Point2, Point3, Size2 and Size3.
+		  
+		  ColorExtensions provides extensions for conversion between Color and Vector3/Vector4.
+		  
+		  EzMath class provides:
+			- Epsilon, PI, E, Tau, Deg2Rad, Rad2Deg, InvLogE2, Gamma and InvGamma constants.
+			- Abs, Acos, Approximately, Asin, Atan, Atan2, Ceiling, Clamp, Clamp01, Cos,
+				DeltaAngle, Exp, Floor, GammaToLinearSpace, InverseLerp, Lerp, LerpUnclamped,
+				LinearToGammaSpace, Log, Log10, Log2, Max, Min, Pow, Round, Sign, Sqrt, Tan,
+				ToEulerAngles, ToQuaternion and Remap functions.
+				
+		  IBoundingVolume interface, BoundingBox struct and BoundingSphere struct and ContainmentType enum provides simple collision check.
+		  
+		  Perlin provides implementation of 3D, 2D and 1D Perlin noises.
+	  </Description>
   </PropertyGroup>
 
   <Import Project="..\build\common.props.csproj" />
